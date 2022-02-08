@@ -1,0 +1,46 @@
+version: '3.4'
+
+services:
+  postgres:
+    image: postgres:11.14
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: test
+      POSTGRES_USER: test
+      POSTGRES_DB: test
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+#  maria:
+#    image: mariadb:10.7.1
+#    restart: always
+#    environment:
+#      MARIADB_USER: test
+#      MARIADB_PASSWORD: test
+#      MARIADB_ROOT_PASSWORD: test
+#      MARIADB_DATABASE: test
+#    # ports:
+#      # - 3808:3808
+#      # - 3306:3306
+#    volumes:
+#      - maria_data:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 3001:8080
+
+  demodocker2:
+    image: demodocker2
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      JAVA_OPTS: -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005,quiet=y
+    ports:
+      - 5005:5005
+      - 3000:8080
+
+volumes:
+#  maria_data:
+  pg_data:

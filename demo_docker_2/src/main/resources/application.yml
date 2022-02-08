@@ -1,0 +1,15 @@
+spring:
+  main:
+    banner-mode: console
+  datasource:
+    #url: jdbc:mariadb://maria:3306/test
+    url: jdbc:postgresql://postgres:5432/test
+    username: test
+    password: test
+    #driverClassName: org.mariadb.jdbc.Driver
+  jpa:
+    #database-platform: org.hibernate.dialect.MariaDB103Dialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: "create-drop"

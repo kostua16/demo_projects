@@ -1,0 +1,1353 @@
+{
+	"info": {
+		"_postman_id": "625aad21-1c79-48e0-95fe-3684901a8c3e",
+		"name": "demo_docker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Settings",
+			"item": [
+				{
+					"name": "CRUD",
+					"item": [
+						{
+							"name": "CRUD LIST",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{target}}/settings/crud",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"settings",
+										"crud"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CRUD ADD Random",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"{{$randomWord}}\",\r\n    \"value\": \"{{$randomWord}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/settings/crud",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"settings",
+										"crud"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CRUD ADD Example",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test\",\r\n    \"value\": \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/settings/crud",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"settings",
+										"crud"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CRUD GET Example",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{target}}/settings/crud/test",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"settings",
+										"crud",
+										"test"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CRUD UPDATE Example",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test\",\r\n    \"value\": \"123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/settings/crud",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"settings",
+										"crud"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CRUD DELETE Example",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "test"
+								},
+								"url": {
+									"raw": "{{target}}/settings/crud",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"settings",
+										"crud"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Metrics",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{target}}/metrics",
+							"host": [
+								"{{target}}"
+							],
+							"path": [
+								"metrics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clear",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{target}}/metrics/clear",
+							"host": [
+								"{{target}}"
+							],
+							"path": [
+								"metrics",
+								"clear"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Logs",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{target}}/logs",
+							"host": [
+								"{{target}}"
+							],
+							"path": [
+								"logs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clear",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{target}}/logs/clear",
+							"host": [
+								"{{target}}"
+							],
+							"path": [
+								"logs",
+								"clear"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Calc",
+			"item": [
+				{
+					"name": "Common",
+					"item": [
+						{
+							"name": "Calc Metrics",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{target}}/metrics/filter/calc",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"metrics",
+										"filter",
+										"calc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Calc Logs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{target}}/logs/filter/com.example.demo_docker.services.CalcService",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"logs",
+										"filter",
+										"com.example.demo_docker.services.CalcService"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Methods (x6)",
+					"item": [
+						{
+							"name": "Increment Classic",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/classic/inc",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"classic",
+										"inc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Increment Lambda",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/lambda/inc",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"lambda",
+										"inc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Convert to String Classic",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/classic/conv",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"classic",
+										"conv"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Convert to String Lambda",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/lambda/conv",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"lambda",
+										"conv"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Evens Classic",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/classic/even",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"classic",
+										"even"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Evens Lambda",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/lambda/even",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"lambda",
+										"even"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Complex Classic",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/classic/complex",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"classic",
+										"complex"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Complex Lambda",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/lambda/complex",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"lambda",
+										"complex"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Matrix Multiply Classic",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"vertical\": [{{array1}}],\r\n    \"horizontal\": [{{array2}}]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/classic/matrixMultiply",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"classic",
+										"matrixMultiply"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Matrix Multiply Lambda",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"vertical\": [{{array1}}],\r\n    \"horizontal\": [{{array2}}]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/lambda/matrixMultiply",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"lambda",
+										"matrixMultiply"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var arr1 = [];",
+									"var arr2 = [];",
+									"",
+									"for (var i=0; i<6; i++) {",
+									"    arr1.push(Math.ceil(Math.random() * 100));",
+									"    arr2.push(Math.ceil(Math.random() * 100));",
+									"}",
+									"",
+									"pm.collectionVariables.set(\"array1\", arr1.toString());",
+									"pm.collectionVariables.set(\"array2\", arr2.toString());"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Methods (x100)",
+					"item": [
+						{
+							"name": "Increment Classic",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/classic/inc",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"classic",
+										"inc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Increment Lambda",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/lambda/inc",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"lambda",
+										"inc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Convert to String Classic",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/classic/conv",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"classic",
+										"conv"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Convert to String Lambda",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/lambda/conv",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"lambda",
+										"conv"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Evens Classic",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/classic/even",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"classic",
+										"even"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Evens Lambda",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/lambda/even",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"lambda",
+										"even"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Complex Classic",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/classic/complex",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"classic",
+										"complex"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Complex Lambda",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/lambda/complex",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"lambda",
+										"complex"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Matrix Multiply Classic",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"vertical\": [{{array1}}],\r\n    \"horizontal\": [{{array2}}]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/classic/matrixMultiply",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"classic",
+										"matrixMultiply"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Matrix Multiply Lambda",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"vertical\": [{{array1}}],\r\n    \"horizontal\": [{{array2}}]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/lambda/matrixMultiply",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"lambda",
+										"matrixMultiply"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var arr1 = [];",
+									"var arr2 = [];",
+									"",
+									"for (var i=0; i<100; i++) {",
+									"    arr1.push(Math.ceil(Math.random() * 100));",
+									"    arr2.push(Math.ceil(Math.random() * 100));",
+									"}",
+									"",
+									"pm.collectionVariables.set(\"array1\", arr1.toString());",
+									"pm.collectionVariables.set(\"array2\", arr2.toString());"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Methods (x200)",
+					"item": [
+						{
+							"name": "Increment Classic",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/classic/inc",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"classic",
+										"inc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Increment Lambda",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/lambda/inc",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"lambda",
+										"inc"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Convert to String Classic",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/classic/conv",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"classic",
+										"conv"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Convert to String Lambda",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/lambda/conv",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"lambda",
+										"conv"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Evens Classic",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/classic/even",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"classic",
+										"even"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Evens Lambda",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/lambda/even",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"lambda",
+										"even"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Complex Classic",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/classic/complex",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"classic",
+										"complex"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Complex Lambda",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{{array1}}]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/lambda/complex",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"lambda",
+										"complex"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Matrix Multiply Classic",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"vertical\": [{{array1}}],\r\n    \"horizontal\": [{{array2}}]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/classic/matrixMultiply",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"classic",
+										"matrixMultiply"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Matrix Multiply Lambda",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"vertical\": [{{array1}}],\r\n    \"horizontal\": [{{array2}}]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{target}}/calc/lambda/matrixMultiply",
+									"host": [
+										"{{target}}"
+									],
+									"path": [
+										"calc",
+										"lambda",
+										"matrixMultiply"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var arr1 = [];",
+									"var arr2 = [];",
+									"",
+									"for (var i=0; i<200; i++) {",
+									"    arr1.push(Math.ceil(Math.random() * 100));",
+									"    arr2.push(Math.ceil(Math.random() * 100));",
+									"}",
+									"",
+									"pm.collectionVariables.set(\"array1\", arr1.toString());",
+									"pm.collectionVariables.set(\"array2\", arr2.toString());"
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "target",
+			"value": "http://localhost:3000/demo_docker"
+		},
+		{
+			"key": "array1",
+			"value": ""
+		},
+		{
+			"key": "array2",
+			"value": ""
+		}
+	]
+}
