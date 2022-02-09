@@ -62,10 +62,10 @@ public class LogDetails {
     }
 
     public Timestamp getDatetime() {
-        return datetime;
+        return new Timestamp(this.datetime.getTime());
     }
 
     public void setDatetime(Timestamp datetime) {
-        this.datetime = datetime;
+        this.datetime = new Timestamp(datetime.getTime());
     }
 }

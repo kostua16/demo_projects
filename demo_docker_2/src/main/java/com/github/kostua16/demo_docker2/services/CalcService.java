@@ -74,7 +74,7 @@ public class CalcService {
             CalcService.class,
             String.format("calc-convert(x%s)-lambda", input.size()),
             () -> input.stream()
-                .map(i -> i.toString())
+                .map(Object::toString)
                 .collect(Collectors.toList())
         );
     }
@@ -131,7 +131,7 @@ public class CalcService {
             () -> input.stream()
                 .map(i -> i + increment)
                 .filter(i -> (i % 2) == 0)
-                .map(i -> i.toString())
+                .map(Object::toString)
                 .collect(Collectors.toList())
         );
     }
@@ -144,13 +144,15 @@ public class CalcService {
             () -> {
                 final MatrixDTO result = new MatrixDTO(matrix.getVertical(),
                     matrix.getHorizontal());
+                final List<List<Integer>> body = new ArrayList<>();
                 for (Integer vert : matrix.getVertical()) {
                     List<Integer> row = new ArrayList<>();
                     for (Integer horiz : matrix.getHorizontal()) {
                         row.add(vert * horiz);
                     }
-                    result.getBody().add(row);
+                    body.add(row);
                 }
+                result.setBody(body);
                 return result;
             }
         );

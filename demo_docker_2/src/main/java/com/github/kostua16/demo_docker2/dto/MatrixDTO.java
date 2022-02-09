@@ -1,7 +1,12 @@
 package com.github.kostua16.demo_docker2.dto;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class MatrixDTO {
 
@@ -12,9 +17,9 @@ public class MatrixDTO {
     private List<List<Integer>> body;
 
     public MatrixDTO(List<Integer> vertical, List<Integer> horizontal, List<List<Integer>> body) {
-        this.vertical = vertical;
-        this.horizontal = horizontal;
-        this.body = body;
+        this.setVertical(vertical);
+        this.setHorizontal(horizontal);
+        this.setBody(body);
     }
 
     public MatrixDTO(List<Integer> vertical, List<Integer> horizontal) {
@@ -26,26 +31,38 @@ public class MatrixDTO {
     }
 
     public List<Integer> getVertical() {
-        return vertical;
+        return Collections.unmodifiableList(vertical);
     }
 
     public void setVertical(List<Integer> vertical) {
-        this.vertical = vertical;
+        this.vertical = Optional.ofNullable(vertical)
+            .map(List::stream)
+            .orElseGet(Stream::empty)
+            .filter(Objects::nonNull)
+            .collect(Collectors.toList());
     }
 
     public List<Integer> getHorizontal() {
-        return horizontal;
+        return Collections.unmodifiableList(horizontal);
     }
 
     public void setHorizontal(List<Integer> horizontal) {
-        this.horizontal = horizontal;
+        this.horizontal = Optional.ofNullable(horizontal)
+            .map(List::stream)
+            .orElseGet(Stream::empty)
+            .filter(Objects::nonNull)
+            .collect(Collectors.toList());
     }
 
     public List<List<Integer>> getBody() {
-        return body;
+        return Collections.unmodifiableList(body);
     }
 
     public void setBody(List<List<Integer>> body) {
-        this.body = body;
+        this.body = Optional.ofNullable(body)
+            .map(List::stream)
+            .orElseGet(Stream::empty)
+            .filter(Objects::nonNull)
+            .collect(Collectors.toList());
     }
 }
