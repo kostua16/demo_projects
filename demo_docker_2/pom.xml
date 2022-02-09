@@ -9,12 +9,12 @@
     <version>2.6.3</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
-  <groupId>com.example</groupId>
-  <artifactId>demo_docker</artifactId>
+  <groupId>com.github.kostua16</groupId>
+  <artifactId>demo_docker2</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <name>demo_docker</name>
-  <description>demo_docker</description>
+  <name>demo_docker2</name>
+  <description>demo_docker2</description>
   <properties>
     <java.version>1.8</java.version>
     <mariadb.version>3.0.3</mariadb.version>
@@ -71,6 +71,7 @@
   </dependencies>
 
   <build>
+    <finalName>${project.name}</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>

@@ -1,1 +1,1 @@
-docker build ./ -t demodocker2
+docker-compose build

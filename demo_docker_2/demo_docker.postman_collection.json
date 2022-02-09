@@ -266,14 +266,14 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{target}}/logs/filter/com.example.demo_docker.services.CalcService",
+									"raw": "{{target}}/logs/filter/com.github.kostua16.demo_docker2.services.CalcService",
 									"host": [
 										"{{target}}"
 									],
 									"path": [
 										"logs",
 										"filter",
-										"com.example.demo_docker.services.CalcService"
+										"com.github.kostua16.demo_docker2.services.CalcService"
 									]
 								}
 							},
