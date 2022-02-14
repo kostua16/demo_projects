@@ -1,0 +1,34 @@
+version: '3.4'
+
+services:
+  postgres:
+    image: postgres:11.14
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: test
+      POSTGRES_USER: test
+      POSTGRES_DB: test
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 3001:8080
+
+#  demodocker2:
+#    image: demodocker2
+#    build:
+#      context: .
+#      dockerfile: ./Dockerfile
+#    environment:
+#      JAVA_OPTS: -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005,quiet=y
+#    ports:
+#      - 5005:5005
+#      - 3000:8080
+
+volumes:
+  pg_data:
