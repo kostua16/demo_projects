@@ -1,0 +1,40 @@
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+
+spring:
+  main:
+    banner-mode: log
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: hero
+          uri: lb://HERO
+          predicates:
+            - Path=/hero/**
+        - id: enemy
+          uri: lb://ENEMY
+          predicates:
+            - Path=/enemy/**
+        - id: other
+          uri: http://localhost:8093
+          predicates:
+            - Path=/other/**
+
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    root: INFO
+    nc.unc.cs.services: TRACE
+    com.netflix.eureka: ERROR
+    com.netflix.discovery: ERROR
+    org.springframework: WARN
+    org.springframework.cloud: INFO
+    org.springframework.web.client.RestTemplate: WARN
