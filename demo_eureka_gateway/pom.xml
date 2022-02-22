@@ -9,7 +9,6 @@
         <module>discovery</module>
         <module>enemy</module>
         <module>gateway</module>
-        <module>other</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -18,10 +17,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>demo_eureka_gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
-    <description>demo</description>
+    <name>demo_eureka_gateway</name>
+    <description>Eureka Gateway simple application</description>
 
     <properties>
         <java.version>1.8</java.version>

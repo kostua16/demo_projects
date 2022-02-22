@@ -1,9 +1,13 @@
+server:
+  port: ${SERVER_PORT:8091}
+
 spring:
   application:
     name: HERO
-server:
-  port: 8091
+  main:
+    banner-mode: off
+
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${EUREKA:http://localhost:8761/eureka}
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}

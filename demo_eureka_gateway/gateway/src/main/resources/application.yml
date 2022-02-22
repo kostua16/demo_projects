@@ -1,9 +1,3 @@
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: "*"
-
 spring:
   main:
     banner-mode: log
@@ -21,10 +15,6 @@ spring:
           uri: lb://ENEMY
           predicates:
             - Path=/enemy/**
-        - id: other
-          uri: http://localhost:8093
-          predicates:
-            - Path=/other/**
 
 logging:
   pattern:
