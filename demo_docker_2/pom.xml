@@ -18,7 +18,7 @@
   <properties>
     <java.version>1.8</java.version>
     <mariadb.version>3.0.3</mariadb.version>
-    <postgres.version>42.3.2</postgres.version>
+    <postgres.version>42.3.7</postgres.version>
   </properties>
   <dependencies>
     <dependency>
